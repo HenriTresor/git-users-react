@@ -7,11 +7,11 @@
   text-align: center;
 }
 
-.users{
+.users {
   max-width: 562px;
 }
 
-.user{
+.user {
   display: flex;
   background-color: rgb(234, 234, 234);
   margin: 5px auto;
@@ -19,29 +19,28 @@
   align-items: center;
   color: black;
   width: 100%;
+  justify-content: center;
 }
 
-.user img{
+.user img {
   width: 100px;
   border-radius: 50%;
-
 }
 
-.user li{
+.user li {
   list-style: none;
   margin: 0 20px;
 }
 
 @media screen and (min-width: 850px) {
-.users{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px !important;
+  .users {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px !important;
+  }
 }
 
-}
-
-.loader{
+.loader {
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -51,24 +50,33 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
 }
 
-.spinner{
+.spinner {
   border-radius: 50px;
   width: 50px;
   padding: 20px;
   height: 50px;
   border-bottom: 2px solid white;
-  animation: spin .4s infinite linear;
+  animation: spin 0.4s infinite linear;
 }
 
 @keyframes spin {
-  
-  from{
+  from {
     transform: rotate(0deg);
   }
-  to{
+  to {
     transform: rotate(360deg);
   }
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.search input {
+  padding: 10px;
 }

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
+import Search from "./Search";
 
 const User = () => {
   let [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
-  const url = "https://api.github.com/users";
+const url = "https://api.github.com/users";
 
   const fetchUsers = async () => {
     try {
@@ -48,7 +49,10 @@ const User = () => {
     return (
       <>
         <h2>github Users</h2>
-        <div className="users">
+        <Search />
+
+            <h2>Other Users</h2>
+                   <div className="users">
           {users.map((user) => {
             return (
               <div className="user" key={user.id}>
@@ -64,8 +68,8 @@ const User = () => {
               </div>
             );
           })}
-            </div>
-            <p>&copy;Tresor 2023</p>
+        </div>
+        <p>&copy;Tresor 2023</p>
       </>
     );
   }
