@@ -43,8 +43,10 @@ const Search = () => {
           <div className="user">
         {userFound && (
           <div>
-            <img src={thisUser.avatar_url} alt="" />
-            <h2>{thisUser.login}</h2>
+                      <img src={thisUser.avatar_url} alt="" />
+                      <h2>{ thisUser.name}</h2>
+                      <h4>{thisUser.login}</h4>
+                      <p>Bio: { thisUser.bio}</p>
                       <a href={thisUser.html_url} target="_blank">Profile</a>
                       <p>Joined {new Date(thisUser.created_at).toLocaleDateString() }</p>
             <p>Followers: {thisUser.followers}</p>
