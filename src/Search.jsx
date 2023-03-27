@@ -45,7 +45,7 @@ const Search = () => {
           <div>
             <img src={thisUser.avatar_url} alt="" />
             <h2>{thisUser.login}</h2>
-            <a href={thisUser.html_url}>Profile</a>
+            <a href={thisUser.html_url} target="_blank">Profile</a>
             <p>Followers: {thisUser.followers}</p>
             <p>Following: {thisUser.following}</p>
           </div>
