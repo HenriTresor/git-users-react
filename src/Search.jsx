@@ -45,9 +45,11 @@ const Search = () => {
           <div>
             <img src={thisUser.avatar_url} alt="" />
             <h2>{thisUser.login}</h2>
-            <a href={thisUser.html_url} target="_blank">Profile</a>
+                      <a href={thisUser.html_url} target="_blank">Profile</a>
+                      <p>Joined {new Date(thisUser.created_at).toLocaleDateString() }</p>
             <p>Followers: {thisUser.followers}</p>
             <p>Following: {thisUser.following}</p>
+            <p>Public Repos: {thisUser.public_repos}</p>
           </div>
                   )}
               
