@@ -29,7 +29,12 @@ const User = () => {
   }, []);
 
   if (isError) {
-    return <h2>Error occured</h2>;
+      return (
+        <>
+              <h2>Error occured</h2>
+              <p>Check Your Connection and Try Again</p>
+        </>
+      );
   }
 
   if (isLoading) {
@@ -41,23 +46,27 @@ const User = () => {
     );
   } else {
     return (
-      <div className="users">
-        {users.map((user) => {
-          return (
-            <div className="user" key={user.id}>
-              <div>
-                <img src={user.avatar_url} alt="" />
+      <>
+        <h2>github Users</h2>
+        <div className="users">
+          {users.map((user) => {
+            return (
+              <div className="user" key={user.id}>
+                <div>
+                  <img src={user.avatar_url} alt="" />
+                </div>
+                <div>
+                  <li>{user.login}</li>
+                  <a href={user.html_url} target="_blank">
+                    Profile
+                  </a>
+                </div>
               </div>
-              <div>
-                <li>{user.login}</li>
-                <a href={user.html_url} target="_blank">
-                  Profile
-                </a>
-              </div>
+            );
+          })}
             </div>
-          );
-        })}
-      </div>
+            <p>&copy;Tresor 2023</p>
+      </>
     );
   }
 };
